@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Chào mừng các bạn</title>
+    <style>
+        #NoiDung {
+            border-style: double;
+            border-width: 3px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        .TieuDe {
+            font-size: 30pt;
+            font-weight: bold;
+        }
+
+        .NoiDung {
+            font-size: 15pt;
+            font-weight: italic;
+        }
+    </style>
+    <script>
+        function MauXanh() {
+            NoiDung.style.backgroundColor = "Green";
+        }
+
+        function MauDo() {
+            NoiDung.style.backgroundColor = "Red";
+        }
+
+        function MauVang() {
+            NoiDung.style.backgroundColor = "Yellow";
+        }
+
+        function XoaMau() {
+            NoiDung.style.backgroundColor = "";
+        }
+
+        function CoChu() {
+            NoiDung.style.fontSize = cboCoChu.value;
+        }
+
+        function DoCao() {
+            NoiDung.style.height = cboDoCao.value;
+        }
+
+        function TangDoCao() {
+            var Cao = NoiDung.style.height;
+            Cao = Cao.substring(0, Cao.length - 2);
+            Cao = parseInt(Cao) + 50;
+            NoiDung.style.height = Cao + "px";
+        }
+
+        function NapTieuDe() {
+            NoiDung.className = "TieuDe";
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>JAVASCRIPT và CSS</p>
+    <p>
+        <input type="button" value="Xanh" onclick="MauXanh()">
+        <input type="button" value="Đỏ" onclick="MauDo()">
+        <input type="button" value="Vàng" onclick="MauVang()">
+        <input type="button" value="Không màu" onclick="XoaMau()">
+    </p>
+
+    <p>
+        <select id="cboCoChu">
+            <option value="20px">20px</option>
+            <option value="40px">40px</option>
+            <option value="90px">90px</option>
+        </select>
+        <input type="button" value="Đặt cỡ chữ" onclick="CoChu()">
+    </p>
+
+    <p>
+        <select id="cboDoCao">
+            <option value="100px">100px</option>
+            <option value="200px">200px</option>
+            <option value="400px">400px</option>
+        </select>
+        <input type="button" value="Đặt chiều cao" onclick="DoCao()">
+        <input type="button" value="Tăng chiều cao" onclick="TangDoCao()">
+    </p>
+
+    <input type="button" value="Nạp css tiêu đề" onclick="NapTieuDe()">
+    <input type="button" value="Nạp css nội dung" onclick="NoiDung.className='NoiDung'">
+
+    <div id="NoiDung">
+        #NoiDung: Xin chào các bạn!
+    </div>
+
+</body>
+
+</html>
